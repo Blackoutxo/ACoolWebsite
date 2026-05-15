@@ -20,20 +20,76 @@ h2 {
     text-align: center;
 }
 
-button {
+.images-idk {
+    position: absolute;
+}
+
+#btn {
+    margin-top: 100px;
     background-color: cyan;
     color: white;
     border: 0px;
     border-radius: 15px;
     padding: 8px;
+
+    transition: 0.1s ease-in-out;
 }
 
-button:hover {
+#btn:hover {
     background-color: aquamarine;
 }
 
 img {
-    width: 100%;
-    margin: 40px;
+    width: 325;
+    height: 250;
+    margin: 20px;
     border-radius: 8%;
+}
+
+.top-buttons {
+    display: flex;
+
+    gap: 20px;
+}
+
+.my-games {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    background-color: aqua;
+    padding: 4px 6px;
+    box-shadow: 5px 5px 0px 0px black;
+    outline: 2px solid black;
+
+    transition: 0.2s ease-in-out;
+}
+
+.my-games:hover {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+
+.daily-drives {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    background-color: aqua;
+    padding: 4px 6px;
+    box-shadow: 5px 5px 0px 0px black;
+    outline: 2px solid black;
+
+    transition: 0.2s ease-in-out;
+}
+
+.daily-drives:hover {
+    transform: translate(4px, 4px);
+    box-shadow: none;
 }

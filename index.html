@@ -1,7 +1,5 @@
 <DOCTYPE! html>
     <html>
-        <a href="V2/index.html">View My Game</a>
-        <a href="V3/carIndex.html"> View My Car website </a>
 
         <head>
             <link rel="stylesheet" href="V1/main.css">
@@ -11,6 +9,11 @@
         </head>
 
         <body>
+        <div class="top-buttons">
+            <a href="V2/index.html" class="my-games"> Game </a>
+            <a href="V3/carIndex.html" class="daily-drives"> Daily Drives </a>
+        </div>
+
             <h1> Nerding it out </h1>
         
             <p> 
@@ -25,12 +28,16 @@
             </ul>
             <h2> Here are some picture </h2> 
 
-            <img src="V1/images/Codin.png" alt="codin" width="300px" />
-            <img src = "V1/images/gaming.png" alt="gamin"" width="300px" />
-            <img src="V1/images/hardware.png" alt="hardweah" width="300px" />
+            <div class="images-idk">
+                <img src="V1/images/Codin.png" alt="codin"/>
+                <img src = "V1/images/gaming.png" alt="gamin"/>
+                <img src="V1/images/hardware.png" alt="hardweah"/>
+            </div>
 
-            <button id="btn"> Click to support </button>
-            <p> Total Support : <span id="spnid">0</span></p>
+            <div class="btn-things">
+                <button id="btn"> Click to support </button>
+                <p> Total Support : <span id="spnid">0</span></p>
+            </div>
 
             <script src="V1/script.js" defer></script>
         </body>

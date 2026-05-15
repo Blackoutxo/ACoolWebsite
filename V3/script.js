@@ -28,7 +28,7 @@ function displayFeatured(car) {
         <p> Posted by u/${car.author} </p>
 
         <div class="upvotes">
-              <img src="images/upvote.png" alt="↑" id="upvote-img" width=20 height=20 >
+              <img src="assets/upvote.png" alt="↑" id="upvote-img" width=20 height=20 >
               ${car.score.toLocaleString()}
          </div>
     </div>
@@ -45,7 +45,7 @@ function displayContenders(cars) {
             <img src="${car.data.url}" class="contender-img">
             <div class="contender-info">
                     <h3>${car.data.title.substring(0, 50)}...</h3>
-                    <p id="score"> <img src="images/upvote.png" width=20 height =20> ${car.data.score.toLocaleString()}</p>
+                    <p id="score"> <img src="assets/upvote.png" width=20 height =20> ${car.data.score.toLocaleString()}</p>
             </div>
         </div>`;
     });
