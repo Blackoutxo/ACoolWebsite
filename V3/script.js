@@ -1,21 +1,12 @@
 async function fetchCars() {
-    try {
-        const reddit = await fetch('https://www.reddit.com/r/carporn/top.json?t=day&limit=10');
-        const img = await reddit.json();
+    const after = new Date(Date.now() - 864e5).toISOString().slice(0, 19) + 'Z';
+    const url = `https://arctic-shift.photon-reddit.com/api/posts/search?subreddit=carporn&limit=100&after=${after}`;
 
-        const posts = img.data.children;
+    const { data } = await (await fetch(url)).json();
+    const posts = data.sort((a, b) => b.score - a.score);
 
-        if(posts.length > 0) {
-            displayFeatured(posts[0].data);
-            displayContenders(posts.slice(1, 6));
-        } else {
-            document.getElementById('car-of-the-day').innerText = 'No images were found today.....'
-        }
-
-    } catch (error) {
-        console.error("Error fetching car data:", error);
-        document.getElementById('car-of-the-day').innerHTML = "Failed to load data. Check console (F12).";
-    }
+    displayFeatured(posts[0]);
+    displayContenders(posts.slice(1, 6));
 }
 
 function displayFeatured(car) {
@@ -42,10 +33,10 @@ function displayContenders(cars) {
     cars.forEach(car => {
         container.innerHTML += `
         <div class="contender-card">
-            <img src="${car.data.url}" class="contender-img">
+            <img src="${car.url}" class="contender-img">
             <div class="contender-info">
-                    <h3>${car.data.title.substring(0, 50)}...</h3>
-                    <p id="score"> <img src="assets/upvote.png" width=20 height =20> ${car.data.score.toLocaleString()}</p>
+                    <h3>${car.title.substring(0, 50)}...</h3>
+                    <p id="score"> <img src="assets/upvote.png" width=20 height =20> ${car.score.toLocaleString()}</p>
             </div>
         </div>`;
     });
